@@ -1,3 +1,4 @@
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -27,6 +28,14 @@ public class TestSuite {
             driver = new ChromeDriver();
 
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    }
+
+    @AfterClass
+    public static void close(){
+        if (driver != null) {
+            driver.quit();
+        }
+        driver.quit();
     }
 }
 

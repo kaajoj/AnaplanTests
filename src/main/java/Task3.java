@@ -15,8 +15,7 @@ public class Task3 {
     @Before
     public void settings(){
         driver = TestSuite.driver;
-
-
+        driver.manage().window().maximize();
 //        filter = "H1 FY20";
     }
 
@@ -26,14 +25,17 @@ public class Task3 {
         driver.findElement(By.xpath("//span[@id='uniqName_51_11']/span[3]")).click();
         driver.findElement(By.id("dijit__TreeNode_4_label")).click();
 //        WebElement changeDate = driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[3]/div/div/div[2]/div/div/div[1]/div[2]/div/div[4]/div/div[1]/span[2]/span/span/span[2]"));
-//        changeDate.click();
-//        changeDate.sendKeys(filter);
+////        changeDate.click();
+////        changeDate.sendKeys(filter);
 
-//        WebDriverWait wait = new WebDriverWait(driver, 30);
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div/ul/li/div/a")));
+        // 2)
+        // Worth adding whether it has already been selected
+        driver.findElement(By.xpath("//div[@id='anaplan_dashboard_dashboardWidgets__Gridlet_1']/div/div[2]")).click();
+//        driver.findElement(By.id("anaplan_widgets_GridSelection_2")).click();
 
+        // 3) read, add 10 and insert
 
-        driver.findElement(By.id("testWait"));
+        // 4) if
     }
 
 //    @After
