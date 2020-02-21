@@ -1,4 +1,3 @@
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -6,12 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class Task1 {
 
@@ -24,20 +19,16 @@ public class Task1 {
 
     @Before
     public void settings(){
-//        System.setProperty("webdriver.gecko.driver","geckodriver.exe");
-//        driver = new FirefoxDriver();
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = TestSuite.driver;
 
         url = "https://us1a.app.anaplan.com/";
         user = "selenium_recrutation@source-corp.com";
         userPass = "K.nowak_0221";
         title = "Anaplan - Supply Chain - For tests";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
-    public void login() throws InterruptedException {
+    public void task1() {
         driver.get(url);
 
         // 1)
@@ -60,17 +51,14 @@ public class Task1 {
         String currentTitle = driver.getTitle();
         Assert.assertEquals("Page title assert", currentTitle, title);
 
-
-
-//        driver.findElement(By.id("testWait"));
     }
 
-    @After
-    public void close(){
-        if (driver != null) {
-            driver.quit();
-        }
-        driver.quit();
-    }
+//    @After
+//    public void close(){
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//        driver.quit();
+//    }
 
 }
