@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 @Suite.SuiteClasses({
         Task1.class,
         Task2.class,
-
+        Task3.class,
 })
 
 
