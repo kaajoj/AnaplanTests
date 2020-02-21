@@ -1,16 +1,10 @@
-import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
+import static junit.framework.TestCase.assertEquals;
+
 
 public class Task2 {
 
@@ -23,17 +17,15 @@ public class Task2 {
 
     @Test
     public void task2() {
+        // 1)
+        // add checking if opacity = 1
+
+        // 2)
         driver.findElement(By.linkText("Detailed Demand Review")).click();
 
-        driver.findElement(By.id("testWait"));
-    }
+        // 3)
+        assertEquals("Detailed Demand Review", driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[1]/div[4]/div/div/span[2]")).getText());
 
-    @After
-    public void close(){
-        if (driver != null) {
-            driver.quit();
-        }
-        driver.quit();
     }
 
 }
